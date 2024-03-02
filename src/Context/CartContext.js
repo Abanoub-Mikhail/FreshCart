@@ -59,7 +59,6 @@ export default function CartContextProvider(props) {
       async function initialCounter() {
         let data = await getCart()
         setCounter(data?.numOfCartItems)
-        // console.log(data);
         setId(data?.data?._id)
       }
 

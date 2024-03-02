@@ -20,7 +20,7 @@ export default function Register() {
       setIsLoading(false)
       setErrorMessage(error.response.data.message)});
     if (data.message == "success") {
-      navigate('/')
+      navigate('/login')
     }
   }
 

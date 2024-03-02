@@ -27,8 +27,8 @@ function App() {
 
 
   const routs= createHashRouter([
-    {path:"" , element: <Layout/> , children : [
-      {path: "home", element:  <ProtectedRoutes><Home/></ProtectedRoutes>  },
+    {path:"/" , element: <Layout/> , children : [
+      {index: true, element:  <ProtectedRoutes><Home/></ProtectedRoutes>  },
       {path: "products", element: <ProtectedRoutes><Products/></ProtectedRoutes> },
       {path: "categories", element: <ProtectedRoutes><Categories/></ProtectedRoutes> },
       {path: "brands", element: <ProtectedRoutes><Brands/></ProtectedRoutes> },
@@ -39,7 +39,7 @@ function App() {
       {path: "allorders", element:<ProtectedRoutes> <Allorders/> </ProtectedRoutes>  },
 
 
-      {index:true , element: <ProtectedAuth><Login/></ProtectedAuth>  },
+      {path:"login" , element: <ProtectedAuth><Login/></ProtectedAuth>  },
       {path: "register", element:   <ProtectedAuth><Register/></ProtectedAuth>  },
       {path: "codeverify", element: <ProtectedAuth><CodeVerify/></ProtectedAuth> },
       {path: "resetPassword", element: <ProtectedAuth><ResetPassword/></ProtectedAuth>  },

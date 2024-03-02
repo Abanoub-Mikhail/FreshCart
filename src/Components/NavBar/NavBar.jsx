@@ -7,7 +7,6 @@ import { cartContext } from '../../Context/CartContext';
 
 
 
-
 export default function NavBar() {
 
   let {counter} = useContext(cartContext)
@@ -25,7 +24,7 @@ export default function NavBar() {
     <>
     <nav className="navbar navbar-expand-lg bg-main-light fixed-top py-3">
   <div className="container">
-    <Link className="navbar-brand" to={"/home"}>
+    <Link className="navbar-brand" to={"/"}>
       <img src={logo} alt="logo image" />
     </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,19 +35,19 @@ export default function NavBar() {
     {token ?
     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
     <li className="nav-item">
-      <NavLink className="nav-link " aria-current="page" to={'home'}>Home</NavLink>
+      <NavLink className="nav-link " aria-current="page" to={'/'}>Home</NavLink>
     </li>
     <li className="nav-item">
-      <NavLink className="nav-link" aria-current="page" to={'cart'}>Cart</NavLink>
+      <NavLink className="nav-link" aria-current="page" to={'/cart'}>Cart</NavLink>
     </li>
     <li className="nav-item">
-      <NavLink className="nav-link " aria-current="page" to={'products'}>Products</NavLink>
+      <NavLink className="nav-link " aria-current="page" to={'/products'}>Products</NavLink>
     </li>
     <li className="nav-item">
-      <NavLink className="nav-link " aria-current="page" to={'categories'}>Categories</NavLink>
+      <NavLink className="nav-link " aria-current="page" to={'/categories'}>Categories</NavLink>
     </li>
     <li className="nav-item">
-      <NavLink className="nav-link " aria-current="page" to={'brands'}>Brands</NavLink>
+      <NavLink className="nav-link " aria-current="page" to={'/brands'}>Brands</NavLink>
     </li>
 
   </ul> : null }
@@ -59,13 +58,13 @@ export default function NavBar() {
         {token ?      <>
         
         <li className='position-relative mx-3 resMarginTop'>
-        <Link to={'washlist'}>
+        <Link to={'/washlist'}>
         <i className="fa-solid fa-heart h2 p-0 m-0 text-danger"></i>
         </Link>
         </li>
 
         <li className='position-relative  resMarginTop'>
-        <Link to={'cart'}>
+        <Link to={'/cart'}>
         <i className="fa-solid fa-cart-shopping h2 p-0 m-0 "></i>
         <span className="counter rounded-3 px-2">
           {counter}
@@ -80,10 +79,10 @@ export default function NavBar() {
         :
         <>
          <li className="nav-item">
-          <Link className="nav-link " aria-current="page" to={'/'}>Login</Link>
+          <Link className="nav-link " aria-current="page" to={'/login'}>Login</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link " aria-current="page" to={'register'}>Register</Link>
+          <Link className="nav-link " aria-current="page" to={'/register'}>Register</Link>
         </li>
         </> }
      

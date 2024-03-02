@@ -27,7 +27,7 @@ export default function Login() {
     if (data.message == "success") {
       localStorage.setItem("userToken" , data.token)
       setToken(data.token)
-      navigate('/home')
+      navigate('/')
     }
   }
 
