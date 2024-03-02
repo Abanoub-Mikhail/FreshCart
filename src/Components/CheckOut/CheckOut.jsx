@@ -17,6 +17,7 @@ export default function CheckOut() {
   window.location.href = data.session.url
   }
 
+  
   let validationSchema = Yup.object({
     details : Yup.string().min(3,"* Details is too Short")
     .max(50, '* Details Must be 50 characters or less')

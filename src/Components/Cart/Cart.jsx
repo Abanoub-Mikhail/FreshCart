@@ -43,7 +43,7 @@ export default function Cart() {
     }
   }
 
-  if (cart?.numOfCartItems == 0 || !cart ) return <div className=' py-5 my-5 d-flex justify-content-center align-items-center'> <img src={img1} className=' noItem' alt="no item" /></div>
+  if (cart?.numOfCartItems == 0 || !cart ) return <div className='container NoItem pt-5 mt-5 d-flex justify-content-center align-items-center'> <img src={img1} className=' w-100 noItem' alt="no item" /></div>
 
   
   return (

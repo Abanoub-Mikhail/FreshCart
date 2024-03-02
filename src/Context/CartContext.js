@@ -47,7 +47,7 @@ export default function CartContextProvider(props) {
       }
 
       function payment(shippingAddress) {
-        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://abanoub-mikhail.github.io/FreshCart/#/`,{shippingAddress},{
+        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://abanoub-mikhail.github.io/FreshCart`,{shippingAddress},{
             headers:{
                 token : localStorage.getItem('userToken')
             }

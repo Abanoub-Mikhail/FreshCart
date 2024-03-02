@@ -114,6 +114,10 @@ li a{
         padding: 10px !important;
         /* margin: auto !important; */
     }
+    .NoItem {
+        width: 50%;
+        margin-inline: auto ;
+    }
     /* section img {
         width: 150px;
     } */
@@ -146,12 +150,18 @@ li a{
     transform: translateY(0%);
 }
 
+.NoItem {
+    width: 100%;
+    
+}
+
     
 }
 
 .mainStyle {
     margin-top: 86px;
     min-height: calc(-106px + 100vh);
+
 }
 
 

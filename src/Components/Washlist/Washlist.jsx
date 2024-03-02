@@ -42,7 +42,7 @@ export default function Washlist() {
       }
     }
 
-    if (washlistArr?.length == 0) return (<div className=' py-5 my-5 d-flex justify-content-center align-items-center'> <img src={img1} alt="no item" /></div>)
+    if (washlistArr?.length == 0) return (<div className=' pt-5 mt-5 NoItem d-flex justify-content-center align-items-center'> <img src={img1} className=' w-100' alt="no item" /></div>)
 
 
   return (

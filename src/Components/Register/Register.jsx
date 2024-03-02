@@ -30,7 +30,7 @@ export default function Register() {
     .max(15, '* Name Must be 15 characters or less')
     .required('* Name is Required'),
     email : Yup.string().email('* Invalid email address').required('* Email is Required'),
-    password : Yup.string().matches(/^[A-Z][a-z0-9]{3,8}$/,"* invalid Password").required("* password is Required"),
+    password : Yup.string().matches(/^[A-Z][a-z0-9]{3,10}$/,"* invalid Password (start with Capitalize)").required("* password is Required"),
     rePassword : Yup.string().oneOf([Yup.ref('password')],"* Password Not the Same").required("* password is Required"),
     phone :Yup.string().matches(/^01[0125][0-9]{8}$/,"* invalid phone").required("* Phone is Required"),
   });
