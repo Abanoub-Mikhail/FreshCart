@@ -8,9 +8,8 @@ import { Helmet } from 'react-helmet';
 
 export default function Washlist() {
 
-  let {getWashlist , removeToWashlist } = useContext(washlist);
+  let {getWashlist , removeToWashlist ,setWashlist ,washlistArr } = useContext(washlist);
   let {addToCart , setCounter} = useContext(cartContext);
-  let [washlistArr, setWashlist] = useState([])
   let [loading, setAddLoading] = useState(false)
 
   async function getAllWashlist() {
@@ -64,11 +63,11 @@ export default function Washlist() {
               <p className='text-main fw-bolder mb-1'>{wash.price} EGP</p>
               <button className='btn p-0 text-danger ' onClick={()=>{removeWashList(wash._id)}}> 
                 <i className="fa-solid fa-trash me-2 text-danger"></i>
-                {loading ? 'removing...' : 'remove'}</button>
+                remove</button>
             </div>
             <div className="addCart">
               <button className='btn bg-main text-white fw-bolder' disabled={loading} onClick={()=>{addProductCart(wash._id) 
-                 removeWashList(wash._id)}}>{loading ? 'loading...' : 'Add to Cart'}</button>
+                 removeWashList(wash._id)}}>Add to Cart</button>
             </div>
           </div>
         </div>

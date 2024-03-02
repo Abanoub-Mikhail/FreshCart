@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext,  useState } from "react";
+import { createContext,  useEffect,  useState } from "react";
 
 
 
@@ -8,6 +8,8 @@ import { createContext,  useState } from "react";
 export let washlist = createContext();
 
 export default function WashlistProvider(props) {
+
+    let [washlistArr, setWashlist] = useState([])
 
 
     function addToWashlist(productId) {
@@ -37,10 +39,19 @@ export default function WashlistProvider(props) {
         .then((response)=>response).catch((error)=>error)
       }
  
+    async function getAllWahlist() {
+        let {data} = await getWashlist()
+        if (data.status == 'success') {
+            setWashlist(data?.data)
+          }
+    }
     
+    useEffect(()=>{
+        getAllWahlist()
+    },[])
 
 
-    return <washlist.Provider value={{addToWashlist , removeToWashlist , getWashlist }}>
+    return <washlist.Provider value={{addToWashlist , removeToWashlist , getWashlist , setWashlist ,washlistArr }}>
     {props.children}
     </washlist.Provider>
 }

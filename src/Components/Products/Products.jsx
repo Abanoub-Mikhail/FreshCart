@@ -14,7 +14,7 @@ export default function Products() {
   let [addLoading , setAddLoading] = useState(false)
   let [search , setSearch] = useState('')
   let {addToCart , setCounter} = useContext(cartContext)
-  let {addToWashlist  , removeToWashlist } = useContext(washlist)
+  let {addToWashlist  , removeToWashlist  } = useContext(washlist)
 
   function getProducts() {
     return axios.get('https://ecommerce.routemisr.com/api/v1/products')
@@ -27,7 +27,6 @@ export default function Products() {
       toast.success(data.message)
     }
   }
-
 
   async function removeWashList(id) {
     let {data} = await removeToWashlist(id)
@@ -66,7 +65,6 @@ async  function addProductCart(id) {
             washList(ele._id);
                 e.target.classList.remove('fa-regular')
                 e.target.classList.add('fa-solid')
-                            
           }else if (e.target.classList.contains('fa-solid')) {
             removeWashList(ele._id)
             e.target.classList.add('fa-regular')
