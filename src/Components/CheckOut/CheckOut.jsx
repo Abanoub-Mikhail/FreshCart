@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './CheckOut.module.css'
 import * as Yup from 'yup';
 import { useFormik } from 'formik'
@@ -9,8 +9,10 @@ import { Helmet } from 'react-helmet';
 export default function CheckOut() {
 
    let {payment} = useContext(cartContext)
+   let [loading , setLoading] = useState(false);
 
   async function onlinePayment(values) {
+    setLoading(true)
   let {data} = await payment(values)
   window.location.href = data.session.url
   }
@@ -68,7 +70,9 @@ export default function CheckOut() {
           <p className='text-danger mt-1'>{formik.errors.city}</p>
         ):null}
         </div>
-            <button disabled={!(formik.dirty && formik.isValid)} className='btn bg-main w-100 text-white mt-4'>Pay Now</button>
+            <button disabled={!(formik.dirty && formik.isValid)} className='btn bg-main w-100 text-white mt-4'>
+            {loading ? <i className='fa fa-spinner fa-spin'></i> : "Pay Now"}
+            </button>
       </form>
     </section>
     </>
