@@ -41,7 +41,7 @@ export default function WashlistProvider(props) {
  
     async function getAllWahlist() {
         let {data} = await getWashlist()
-        if (data.status == 'success') {
+        if (data?.status == 'success') {
             setWashlist(data?.data)
           }
     }
