@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { HashRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Home/Home';
 import Products from './Components/Products/Products';
@@ -26,7 +26,7 @@ function App() {
   let {setToken} = useContext(tokenContext)
 
 
-  const routs= HashRouter([
+  const routs= createHashRouter([
     {path:"" , element: <Layout/> , children : [
       {path: "home", element:  <ProtectedRoutes><Home/></ProtectedRoutes>  },
       {path: "products", element: <ProtectedRoutes><Products/></ProtectedRoutes> },
