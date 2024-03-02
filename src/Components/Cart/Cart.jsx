@@ -45,7 +45,7 @@ export default function Cart() {
 
   if (cart?.numOfCartItems == 0 || !cart ) return <div className=' py-5 my-5 d-flex justify-content-center align-items-center'> <img src={img1} className=' noItem' alt="no item" /></div>
 
-
+  
   return (
     <>
     <Helmet>
