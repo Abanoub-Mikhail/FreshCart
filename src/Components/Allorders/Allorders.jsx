@@ -33,14 +33,14 @@ export default function Allorders() {
               <h2 className=' fw-bolder'>#{item.id}</h2>
               <p>Count of Orders : <span className='text-main fw-bolder'>{item.cartItems.length}</span></p>
             </div>
+            <div className="row gy-3 gx-1" >
             {item.cartItems.map(cart =>{
-              return <div className="row" key={cart._id}>
-                <div className="col-md-3 mb-3 ">
+                return <div className="col-md-2 mb-3  " key={cart._id}>
                   <img src={cart.product.imageCover} alt="image" width={100} />
                 </div>
-              </div>
               
             })}
+            </div>  
             <hr />
             <h3 className=' text-capitalize'>total price : <span className=' text-main fw-bolder'> {item.totalOrderPrice} EGP</span></h3>
           </div>
